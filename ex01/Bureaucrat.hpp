@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 11:41:10 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/19 11:42:55 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/12/21 11:50:00 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <stdexcept>
+#include "Form.hpp"
+
 
 class Bureaucrat
 {
@@ -38,6 +40,18 @@ public:
     public:
         const char *what() const noexcept override;
     };
+    void signForm(Form& f)
+    {
+     try
+     {
+        f.beisSigned(*this);
+         std::cout << "Ahmed signed TaxForm" <<std :: endl;
+     }
+        catch(const std::exception &e)
+        {
+            std::cout << e.what() << std::endl;
+        }
+    }
 };
 
 #endif
