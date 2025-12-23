@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 11:43:20 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/21 11:57:21 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/12/23 13:01:58 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,60 +20,28 @@ class Form
 {
 private:
     const std::string name;
-    bool isSigned = false;
-    const int gradeToSign;
-    const int gredeToExecute;
+    bool isSigned;
+    const  int gradeToSign;
+    const  int gredeToExecute;
 
 public:
-    Form ::Form(std::string name, int gradeToSign, int gredeToExecute)
-        : name(name), gradeToSign(gradeToSign), gredeToExecute(gredeToExecute)
-    {
-    }
-    const std ::string getName() const
-    {
-        return name;
-    }
-    const bool getSigned()
-    {
-        return isSigned;
-    }
-    const int getgradeToSige()
-    {
-        return gradeToSign;
-    }
-    const int getgredeToExecute()
-    {
-        return gredeToExecute;
-    }
+    Form(std::string name, int gradeToSign, int gredeToExecute);
+    std ::string getName() const;
+    bool getSigned() const;
+    int getgradeToSige() const;
+    int getgredeToExecute() const;
 
     class GradeTooHighException : public std::exception
     {
     public:
-        const char *what() const noexcept override;
+        const char *what() const throw();
     };
     class GradeTooLowException : public std::exception
     {
     public:
-        const char *what() const noexcept override;
+        const char *what() const throw();
     };
-    void beisSigned(Bureaucrat &b)
-    {
-        if (b.getGrade() <= gradeToSign)
-        {
-            isSigned = true;
-        }
-        else if (b.getGrade() > gradeToSign)
-        {
-            throw GradeTooLowException();
-        }
-    }
+    void beisSigned(Bureaucrat &b);
 };
-std::ostream &operator<<(std::ostream &out, const Form &op)
-{
-    out << "Form: " << op.getName()
-    << "this Signed is: " << op.getSigned() <<
-    << "grade to signed" << op.getg
-    
-    return out;
-}
+std::ostream &operator<<(std::ostream &out, const Form &op);
 #endif
