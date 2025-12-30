@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:44:00 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/24 13:17:07 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/12/30 11:32:16 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ public:
     };
     void beisSigned(Bureaucrat &b);
     void execute(Bureaucrat const &executor) const;
+    AForm &operator=(const AForm &op);
     AForm(const AForm &op);
     virtual void action() = 0;
 };

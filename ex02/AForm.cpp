@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:43:44 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/24 13:28:07 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/12/30 11:33:52 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,15 @@ const char *AForm::FormNotSignedException::what() const throw()
 {
     return "gared is too low";
 };
-AForm::AForm(const AForm &op):name(op.name),isSigned(.)
+AForm::AForm(const AForm &op):name(op.name),isSigned(op.isSigned),gradeToSign(op.gradeToSign),gredeToExecute(op.gredeToExecute)
 {
-    this->name = op.getName();
-    this->isSigned = op.getSigned();
-    this->gradeToSign = op.getgradeToSige();
-    this->gredeToExecute = op.getgredeToExecute();
+    
+};
+AForm &AForm::operator=(const AForm &op)
+{
+    if(this != &op)
+    {
+       this->isSigned = op.isSigned;
+    }
+    return *this;
 }
