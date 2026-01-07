@@ -6,12 +6,12 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:43:01 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/24 10:43:04 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 11:34:02 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grades) : name(name)
 {
@@ -59,15 +59,29 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return "gared is too low";
 };
 
-void Bureaucrat::signForm(Form &f)
+void Bureaucrat::signForm(AForm &f)
 {
     try
     {
         f.beisSigned(*this);
-        std::cout << "Ahmed signed TaxForm" << std ::endl;
+        std::cout<< name << " signed " << f.getName() << std ::endl;
     }
     catch (const std::exception &e)
     {
-        std::cout << e.what() << std::endl;
+        std::cout << name << "not sign " << f.getName() << " because "<< e.what() << std::endl;
     }
 };
+    void Bureaucrat::excuteForm(AForm const & form) const
+    {
+        try
+        {
+            form.execute(*this);
+            std::cout << this->getName() << " executed " << form.getName() << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << this->getName() << "failed to execute " << form.getName() << e.what() << '\n';
+        }
+        
+        
+    }

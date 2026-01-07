@@ -6,11 +6,12 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 11:46:53 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/30 13:36:53 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:27:23 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include <cstdlib>
 
 RobotomyRequestForm::RobotomyRequestForm() {};
 RobotomyRequestForm::RobotomyRequestForm(std::string name) : AForm(name, 72, 45), target("default") {};

@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:43:14 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/24 10:43:15 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:38:42 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <iostream>
 #include <stdexcept>
 
-class Form;
+class AForm;
 
 class Bureaucrat
 {
@@ -30,6 +30,7 @@ public:
     std::string getName() const;
     void incrementing();
     void decrement();
+    void excuteForm(AForm const & form) const;
     class GradeTooHighException : public std::exception
     {
     public:
@@ -40,7 +41,7 @@ public:
     public:
         const char *what() const throw();
     };
-    void signForm(Form &f);
+    void signForm(AForm &f);
 };
 
 #endif

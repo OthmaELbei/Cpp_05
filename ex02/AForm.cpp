@@ -6,13 +6,14 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:43:44 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/30 11:33:52 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:26:54 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
 
-// AForm::AForm(){};
+AForm::AForm():name("defolt"),gradeToSign(0),gredeToExecute(0)
+{};
 AForm::AForm(std::string name, int gradeToSign, int gredeToExecute)
     : name(name), isSigned(false), gradeToSign(gradeToSign), gredeToExecute(gredeToExecute)
 {
@@ -85,3 +86,15 @@ AForm &AForm::operator=(const AForm &op)
     }
     return *this;
 }
+void AForm::execute(const Bureaucrat &executor) const
+{
+       if(!this->isSigned)
+       {
+        throw AForm::FormNotSignedException();
+       }
+       if(executor.getGrade() > this->getgredeToExecute())
+       {
+        throw AForm::GradeTooHighException();
+       }
+       this->action();
+};

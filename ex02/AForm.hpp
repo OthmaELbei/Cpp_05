@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 10:44:00 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/30 11:32:16 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:26:47 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ public:
         const char *what() const throw();
     };
     void beisSigned(Bureaucrat &b);
-    void execute(Bureaucrat const &executor) const;
+    void execute(const Bureaucrat  &executor) const;
     AForm &operator=(const AForm &op);
     AForm(const AForm &op);
-    virtual void action() = 0;
+    virtual void action() const = 0;
 };
-std::ostream &operator<<(std::ostream &out, const Form &op);
+std::ostream &operator<<(std::ostream &out, const AForm &op);
 #endif

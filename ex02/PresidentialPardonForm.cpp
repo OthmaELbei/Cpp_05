@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/24 11:22:46 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/30 11:38:52 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:27:12 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ std::string PresidentialPardonForm::gettarget() const
 {
     return this->target;
 };
-void PresidentialPardonForm::action() const
+void PresidentialPardonForm::action()  const
 {
     std::cout << this->target << " has been pardoned by Zaphod Beeblebrox."
               << std::endl;

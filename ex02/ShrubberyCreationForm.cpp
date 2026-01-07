@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/30 14:21:58 by oelbied           #+#    #+#             */
-/*   Updated: 2025/12/30 14:35:23 by oelbied          ###   ########.fr       */
+/*   Updated: 2026/01/06 10:27:43 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ std::string ShrubberyCreationForm::gettarget() const
 void ShrubberyCreationForm::action() const
 {
     std::string filename =this->target + "shrr";
-    std::ofstream file(filename);
+    std::ofstream file(filename.c_str());
     file << "        \\*\\/      " << std::endl;
     file << "         \\|/-*        " << std::endl;
     file << "         /||\\\\-*      " << std::endl;
