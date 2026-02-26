@@ -28,6 +28,9 @@ int main()
         ShrubberyCreationForm sd("hello");
         RobotomyRequestForm robo("MsteRobo");
         PresidentialPardonForm brader("arter");
+
+        std::cout << sd << std::endl;
+
         bob.excuteForm(sd);
         bob.excuteForm(robo);
         bob.excuteForm(brader);
