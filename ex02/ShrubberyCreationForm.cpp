@@ -38,12 +38,22 @@ void ShrubberyCreationForm::action() const
 {
     std::string filename =this->target + "shrr";
     std::ofstream file(filename.c_str());
-    file << "        \\*\\/      " << std::endl;
-    file << "         \\|/-*        " << std::endl;
-    file << "         /||\\\\-*      " << std::endl;
-    file << "         /||\\/\\\\ -*     " << std::endl;
-    file << "         /||\\/\\\\\\-*     " << std::endl;
-    file << "         /*\\      " << std::endl;
-    file << "         /*\\      " << std::endl;
+    file << "         \\//\\ //-*/\\/_* //_*                       " << std::endl;
+    file << "     *-\\*-||\\\\\\ //\\_*\\///_*                  " << std::endl;
+    file << "    \\\\_*//\\*//*| |\\\\_*//\\*//*                  " << std::endl;
+    file << " \\\\_-*\\_*//\\*/| |\\_-*\\_*////\\*/                  " << std::endl;
+    file << "*-\\\\_-*\\_*//*//| |\\_-*\\_//*////\\*/                  " << std::endl;
+    file << "*-\\\\_-*\\_*//*//| |\\_-*\\_//*////\\*/                  " << std::endl;
+    file << "*-\\\\_-*\\_*//*//| |\\_-*\\_//*////\\*/                  " << std::endl;
+    file << "    *-\\\\__*//*//| |\\_-*\\_//*/\\*/                  " << std::endl;
+    file << "     *-\\*__*//*//| |\\_-*\\_//*/                  " << std::endl;
+    file << "      *-\\__*//*//| |\\_-*\\_//*/                  " << std::endl;
+    file << "       *-\\__*/*//| |\\_////*/                  " << std::endl;
+    file << "              \\\\| |///                  " << std::endl;
+    file << "                \\| |/                  " << std::endl;
+    file <<"                 | |/                  " << std::endl;
+    file <<"                 | |                  " << std::endl;
+    file <<"                 | |                  " << std::endl;
+    file <<"                 | |                  " << std::endl;
     file.close();
 }

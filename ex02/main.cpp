@@ -22,22 +22,22 @@ int main()
     {
         // std::cout << "----- SHRUBBERY TEST -----" << std::endl;
         Bureaucrat bob("Bob", 1);
-        Bureaucrat mid("layk", 70);
-        Bureaucrat leed("danke", 150);
+        // Bureaucrat mid("layk", 70);
+        // Bureaucrat leed("danke", 150);
         
         ShrubberyCreationForm sd("hello");
-        RobotomyRequestForm robo("MsteRobo");
-        PresidentialPardonForm brader("arter");
+        // RobotomyRequestForm robo("MsteRobo");
+        // PresidentialPardonForm brader("arter");
 
         std::cout << sd << std::endl;
 
+        bob.signForm(sd);
         bob.excuteForm(sd);
-        bob.excuteForm(robo);
-        bob.excuteForm(brader);
+        // bob.excuteForm(robo);
+        // bob.excuteForm(brader);
         
-        mid.signForm(sd);
-        mid.signForm(robo);
-        mid.signForm(brader);
+        // mid.signForm(robo);
+        // mid.signForm(brader);
 
         
         
