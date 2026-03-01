@@ -16,7 +16,7 @@ FILES =  Bureaucrat.cpp Form.cpp main.cpp
 
 OPJECT = $(FILES:.cpp=.o)
 
-NAME = ScavTrap
+NAME = Form
 
 all : $(NAME)
 

@@ -10,32 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <stdexcept>
-
-class Bureaucrat
-{
-private:
-    const std::string name;
-    int grade;
-
-public:
-    Bureaucrat(std::string name, int grades);
-    int getGrade() const;
-    std::string getName() const;
-    void incrementing();
-    void decrement();
-    class GradeTooHighException : public std::exception
-    {
-    public:
-        const char *what() const noexcept override;
-    };
-    class GradeTooLowException : public std::exception
-    {
-    public:
-        const char *what() const noexcept override;
-    };
-};
+#include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string name, int grades) : name(name)
 {
@@ -74,26 +49,11 @@ void Bureaucrat::decrement()
     }
     grade += 1;
 }
-const char *Bureaucrat::GradeTooHighException::what() const noexcept
+const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "gared is too high";
 }
-const char *Bureaucrat::GradeTooLowException::what() const noexcept
+const char *Bureaucrat::GradeTooLowException::what() const throw()
 {
     return "gared is too low";
-}
-int main()
-{
-    try
-    {
-        Bureaucrat a("ahmed", 0);
-        a.incrementing();
-        std::cout << a.getGrade() << std::endl;
-        a.incrementing();
-        // a.decrement();
-    }
-    catch (const std::exception &e)
-    {
-        std::cerr << e.what() << '\n';
-    }
 }
